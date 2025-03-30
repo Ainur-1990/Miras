@@ -1,0 +1,10 @@
+services:
+  - type: worker
+    name: inheritance-calculator-pro
+    env: python
+    buildCommand: pip install -r render-requirements.txt
+    startCommand: python calculate.py
+    plan: starter # рекомендуемый план для рабочего бота
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        sync: false # токен должен быть установлен при развёртывании
